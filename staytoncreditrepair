@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stayton Credit Repair</title>
+  <meta name="description" content="Stayton Credit Repair – Plain English, real timelines, no hype. Consultation $150. Monthly dispute work $99." />
+  <style>
+    /* =========================
+       Stayton Credit Repair — Pro Styling Upgrade
+       Palette: Navy / Gold / White
+       ========================= */
+    :root{
+      --navy:#0b1d3a;      /* deep navy */
+      --navy-2:#0f2a56;    /* richer navy */
+      --gold:#d4af37;      /* classic gold */
+      --gold-2:#ffdf6e;    /* bright gold */
+      --white:#ffffff;
+      --slate:#f5f7fb;     /* page bg */
+      --ink:#0f172a;       /* body text */
+      --muted:#64748b;     /* secondary text */
+      --card:#ffffff;      /* card bg */
+      --shadow:0 12px 32px rgba(2,6,23,.12);
+      --ring: 0 0 0 3px rgba(212,175,55,.35);
+      --radius:16px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;
+      color:var(--ink); background: radial-gradient(1400px 700px at 80% -300px, #102b56 0%, var(--navy) 55%, #08132a 100%) fixed,
+                        linear-gradient(#0b1d3a,#0b1d3a) fixed;
+      background-attachment: fixed;
+    }
+    /* Subtle texture overlay for depth */
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;background:
+      radial-gradient(800px 400px at -10% -20%, rgba(212,175,55,.12), transparent 70%),
+      radial-gradient(800px 400px at 110% 120%, rgba(255,223,110,.08), transparent 70%);}    
+
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1140px;margin:0 auto;padding:0 22px}
+
+    /* ========== Header / Nav ========== */
+    header{
+      position:sticky;top:0;z-index:50;background:rgba(11,29,58,.92);backdrop-filter:saturate(140%) blur(8px);
+      color:var(--white);box-shadow:0 6px 16px rgba(0,0,0,.24)
+    }
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand h1{font-size:20px;line-height:1.1;margin:0;letter-spacing:.2px}
+    .brand small{display:block;font-size:12px;opacity:.95;letter-spacing:.4px;color:var(--gold-2)}
+
+    .logo-svg,.logo-img{width:60px;height:60px;border-radius:14px;background:linear-gradient(135deg,#fff,#f6f6f6);box-shadow:0 3px 10px rgba(0,0,0,.22);padding:6px}
+
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:6px 14px;flex-wrap:wrap}
+    nav a{display:block;padding:10px 12px;border-radius:10px;font-weight:700;letter-spacing:.2px;transition:all .18s ease}
+    nav a:hover, nav a:focus{background:rgba(255,255,255,.14);transform:translateY(-1px)}
+    .menu-toggle{display:none}
+
+    .cta-strip{display:flex;align-items:center;gap:12px;font-size:14px}
+    .cta-strip a{padding:6px 10px;border-radius:10px;background:rgba(255,255,255,.10);transition:all .18s}
+    .cta-strip a:hover{background:rgba(255,255,255,.18)}
+
+    /* ========== Hero ========== */
+    .hero{
+      color:var(--white);padding:64px 0 46px;border-bottom:1px solid rgba(255,255,255,.08);
+      background: radial-gradient(1200px 380px at 70% -220px, #153864 0%, var(--navy) 60%, #08132a 100%);
+    }
+    .hero h2{font-size:44px;margin:0 0 10px;letter-spacing:.3px}
+    .hero p{font-size:18px;max-width:760px;opacity:.95}
+    .hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+
+    /* Buttons */
+    .btn{border:0;border-radius:14px;padding:13px 18px;font-weight:800;cursor:pointer;transition:all .18s ease;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+    .btn.gold{background:linear-gradient(180deg,var(--gold),#c79b1e);color:#111}
+    .btn.gold:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(0,0,0,.22)}
+    .btn.ghost{background:transparent;color:var(--white);outline:2px solid rgba(255,255,255,.45)}
+    .btn.ghost:hover{background:rgba(255,255,255,.08)}
+    .btn.pill{border-radius:999px}
+
+    /* ========== Sections / Cards / Grids ========== */
+    section{padding:62px 0}
+    h3{margin:0 0 18px;font-size:30px;color:var(--white)}
+    .lead{color:var(--muted)}
+
+    .card{background:linear-gradient(180deg,#ffffff, #fafafa);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);
+      border:1px solid rgba(2,6,23,.06)}
+
+    .grid{display:grid;gap:22px}
+    .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width:900px){.grid.two,.grid.three{grid-template-columns:1fr}}
+
+    /* Fancy ordered list for steps */
+    ol.steps{counter-reset:step;display:grid;gap:14px}
+    ol.steps > li{position:relative;padding:14px 14px 14px 54px;background:var(--white);border:1px solid #e5e7eb;border-radius:14px;box-shadow:0 10px 24px rgba(2,6,23,.05)}
+    ol.steps > li:before{counter-increment:step;content:counter(step);position:absolute;left:14px;top:50%;transform:translateY(-50%);
+      width:28px;height:28px;border-radius:50%;background:var(--gold);color:#111;display:grid;place-items:center;font-weight:900;box-shadow:0 4px 10px rgba(0,0,0,.18)}
+
+    /* Checklists */
+    .checklist{padding-left:0;list-style:none}
+    .checklist li{padding-left:30px;position:relative;margin:10px 0}
+    .checklist li:before{content:"✓";position:absolute;left:0;top:0;color:var(--gold);font-weight:900;filter:drop-shadow(0 2px 4px rgba(0,0,0,.2))}
+
+    /* Pricing badges */
+    .price{display:inline-flex;align-items:center;gap:8px;font-weight:900;color:#111;background:linear-gradient(180deg,var(--gold-2),var(--gold));
+      padding:6px 10px;border-radius:999px;box-shadow:0 8px 18px rgba(212,175,55,.35)}
+
+    /* Forms */
+    form label{display:block;font-weight:800;margin:10px 0 6px;color:var(--navy-2)}
+    input, select, textarea{width:100%;padding:12px 14px;border:1px solid #d1d5db;border-radius:12px;background:#fff;transition:all .16s}
+    input:focus, select:focus, textarea:focus{outline:none;box-shadow:var(--ring);border-color:#caa132}
+    .row{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+    @media (max-width:780px){.row{grid-template-columns:1fr}}
+    .muted{color:#374151;font-size:14px}
+    .hint{font-size:12px;color:#6b7280}
+    .field-inline{display:flex;align-items:center;gap:10px}
+
+    /* Custom checkboxes */
+    .field-inline > input[type="checkbox"]{appearance:none;width:18px;height:18px;border:2px solid #c9cdd6;border-radius:6px;display:inline-grid;place-items:center;transition:all .14s}
+    .field-inline > input[type="checkbox"]:checked{background:var(--gold);border-color:#a67c00}
+    .field-inline > input[type="checkbox"]:checked:after{content:"✓";font-weight:900;color:#111;font-size:13px}
+
+    /* FAQ accordion polish */
+    details{background:var(--white);border:1px solid #e5e7eb;border-radius:14px;padding:14px 16px;box-shadow:0 8px 16px rgba(2,6,23,.06)}
+    summary{cursor:pointer;font-weight:900;color:var(--navy-2)}
+    details[open]{border-color:#d9b957}
+
+    /* Footer */
+    footer{background:linear-gradient(180deg,var(--navy),#071730);color:var(--white);padding:26px 0;margin-top:50px;border-top:1px solid rgba(255,255,255,.08)}
+    .footer-grid{display:grid;gap:12px;grid-template-columns:2fr 1fr}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+    .quick-links a{display:inline-block;margin:6px 10px 0 0;padding:7px 12px;background:rgba(255,255,255,.10);border-radius:10px}
+
+    /* Sticky action bubble */
+    .float-contact{position:fixed;right:18px;bottom:18px;background:linear-gradient(180deg,var(--gold-2),var(--gold));color:#111;border-radius:999px;padding:12px 16px;font-weight:900;box-shadow:0 10px 24px rgba(0,0,0,.28);transition:transform .16s}
+    .float-contact:hover{transform:translateY(-2px)}
+
+    /* Nice subtle reveal animations */
+    @keyframes rise {from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:none}}
+    .card, ol.steps > li, details, .footer-grid > *{animation:rise .5s ease both}
+
+    /* Responsive nav toggle */
+    @media (max-width:990px){
+      .menu-toggle{display:inline-block}
+      #mainnav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <img class="logo-img" src="logo.png" alt="Stayton Credit Repair logo – 1950s vintage character with a hat, big grin, pen and pad in hand" />
+        <div>
+          <h1>Stayton Credit Repair</h1>
+          <small>World Class Credit Repair</small>
+        </div>
+      </div>
+      <button class="menu-toggle btn gold" aria-label="Open menu" onclick="toggleMenu()">Menu</button> btn gold" aria-label="Open menu" onclick="toggleMenu()">Menu</button>
+      <nav id="mainnav" aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#services">Services & Pricing</a></li>
+          <li><a href="#customization">Customization</a></li>
+          <li><a href="#timelines">Timelines</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#portal">Client Portal</a></li>
+        </ul>
+      </nav>
+      <div class="cta-strip">
+        <a href="tel:+16828889241">Call: 682‑888‑9241</a>
+        <a href="mailto:JosephStayton36@gmail.com">Email: JosephStayton36@gmail.com</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h2>Fix mistakes, understand your report, and move forward.</h2>
+      <p>No hype—plain English and real timelines. We sit down together, look at your reports line by line, and make a plan that fits your life.</p>
+      <div class="actions">
+        <a class="btn gold" href="#intake">Start Intake</a>
+        <a class="btn ghost" href="#contact">Book Consultation ($150)</a>
+      </div>
+      <p class="hint" style="margin-top:10px">Hours: Mon–Sat, 9:00 a.m. – 7:00 p.m. Central Time</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how">
+    <div class="container grid two">
+      <div>
+        <h3>How It Works – Simple Steps</h3>
+        <ol class="card" style="padding:16px 22px">
+          <li><strong>Intake & Reports.</strong> Fill out the intake form and upload your ID and proof of address. We securely review your credit reports or meet face‑to‑face, one‑on‑one.</li>
+          <li><strong>Consultation ($150).</strong> We go through your reports together, identify what's wrong, and choose the timeline category A, B, or C.</li>
+          <li><strong>Monthly Work ($99/mo).</strong> Targeted disputes, tracking responses, and updates. First 10 inquiries are free; each extra is $15.</li>
+          <li><strong>Monitor & Adjust.</strong> We follow up with bureaus and furnishers, send additional rounds if needed, and keep you posted.</li>
+          <li><strong>Results & Next Steps.</strong> When items are resolved or verified, we plan positive next steps to keep you moving forward.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>What We Work On</h3>
+        <ul class="checklist">
+          <li>Wrong personal info (misspelled names, wrong SSN digits, wrong DOB, addresses)</li>
+          <li>Wrong or missing account digits, duplicate accounts, mixed files</li>
+          <li>Inquiries: review + removal requests</li>
+          <li>Late payments, identity theft items</li>
+          <li>Serious items like repossession and bankruptcy</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services & Pricing -->
+  <section id="services">
+    <div class="container">
+      <h3>Services & Pricing</h3>
+      <div class="grid three">
+        <div class="card">
+          <h4>Consultation <span style="color:var(--gold)">$150</span> (Required)</h4>
+          <p>Meet in person or virtually. Review your reports together and build a realistic plan.</p>
+        </div>
+        <div class="card">
+          <h4>Monthly Services <span style="color:var(--gold)">$99/mo</span></h4>
+          <p>Ongoing dispute work, tracking, follow‑ups, and updates.</p>
+        </div>
+        <div class="card">
+          <h4>Inquiries</h4>
+          <p>First 10 are free. Each additional inquiry: <strong>$15</strong>. Typical inquiry time ≈ <strong>~30 days</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customization -->
+  <section id="customization">
+    <div class="container">
+      <h3>Build Your Plan (Customization)</h3>
+      <form id="customizeForm" class="card" onsubmit="handleCustomize(event)">
+        <div class="row">
+          <div>
+            <label for="timelineCat">Timeline Category</label>
+            <select id="timelineCat" required>
+              <option value="A">A — Small corrections (~30 days)</option>
+              <option value="B">B — Moderate corrections (~30–60 days)</option>
+              <option value="C">C — Serious items (~60–120 days)</option>
+            </select>
+            <p class="hint">Examples: A – misspelled names, wrong SSN digits/DOB/address, inquiries. B – account shows wrong/missing digits. C – late payments, identity theft, repossession, bankruptcy.</p>
+          </div>
+          <div>
+            <label for="apptType">Appointment Type</label>
+            <select id="apptType" required>
+              <option value="in-person">In‑Person Consultation — $150</option>
+              <option value="virtual">Virtual Consultation — $150</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="extraInquiries">Number of inquiries beyond the first 10</label>
+          <input id="extraInquiries" type="number" min="0" step="1" value="0" />
+          <p class="hint">We will review and finalize everything together during your $150 consultation before any monthly work begins.</p>
+        </div>
+        <button class="btn gold" type="submit">Save My Preferences</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Timelines -->
+  <section id="timelines">
+    <div class="container grid two">
+      <div>
+        <h3>Timelines – Set Expectations</h3>
+        <p>We do <strong>not</strong> guarantee outcomes. These are honest time windows so you know what to expect. Bureau and furnisher response times affect the pace; some items may require documentation or multiple rounds.</p>
+        <ul class="checklist">
+          <li><strong>Category A</strong> – small corrections: about 30 days.</li>
+          <li><strong>Category B</strong> – moderate corrections: about 30–60 days.</li>
+          <li><strong>Category C</strong> – serious items: about 60–120 days.</li>
+        </ul>
+      </div>
+      <aside class="card">
+        <h4>CROA‑Aligned Notes & Disclaimers</h4>
+        <ul class="checklist">
+          <li>We do not guarantee specific score changes or outcomes.</li>
+          <li>We dispute inaccurate, unverifiable, and incomplete information only.</li>
+          <li>We do not remove accurate, verifiable items.</li>
+          <li>Timing depends on bureaus/furnishers and required documentation.</li>
+          <li>You can dispute items on your own with the credit bureaus at no cost.</li>
+          <li>We are not a law firm and do not provide legal advice.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about">
+    <div class="container grid two">
+      <div>
+        <h3>About Cory</h3>
+        <p>I started Stayton Credit Repair to make credit simple and honest. Reports and letters shouldn’t feel like a puzzle.</p>
+        <p>My approach is straightforward: sit down together, explain everything in plain English, choose a realistic timeline, and keep you updated.</p>
+        <p><strong>Company motto:</strong> Plain English. Real timelines. No hype.</p>
+        <p><strong>What I believe:</strong> Clear communication beats the fine print. You should always know what we’re doing and why. No magic promises—just steady, professional work.</p>
+      </div>
+      <div class="card">
+        <h4>Business Info</h4>
+        <p><strong>Phone:</strong> <a href="tel:+16828889241">682‑888‑9241</a><br>
+           <strong>Email:</strong> <a href="mailto:JosephStayton36@gmail.com">JosephStayton36@gmail.com</a><br>
+           <strong>Hours:</strong> Mon–Sat, 9:00 a.m. – 7:00 p.m. CT</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intake Form -->
+  <section id="intake">
+    <div class="container">
+      <h3>Start Intake</h3>
+      <form id="intakeForm" class="card" onsubmit="handleIntake(event)">
+        <h4>Contact Information</h4>
+        <div class="row">
+          <div><label for="firstName">First Name</label><input id="firstName" required></div>
+          <div><label for="lastName">Last Name</label><input id="lastName" required></div>
+        </div>
+        <div class="row">
+          <div><label for="phone">Phone</label><input id="phone" type="tel" required></div>
+          <div><label for="email">Email</label><input id="email" type="email" required></div>
+        </div>
+        <div class="row">
+          <div><label for="street">Street Address</label><input id="street" required></div>
+          <div><label for="city">City</label><input id="city" required></div>
+        </div>
+        <div class="row">
+          <div><label for="state">State</label><input id="state" required></div>
+          <div><label for="zip">Zip</label><input id="zip" required></div>
+        </div>
+
+        <h4>Identity Verification</h4>
+        <div class="row">
+          <div><label for="ssnLast4">Last 4 SSN</label><input id="ssnLast4" maxlength="4" pattern="\\d{4}" required></div>
+          <div><label for="dob">Date of Birth</label><input id="dob" type="date" required></div>
+        </div>
+        <div class="row">
+          <div><label for="idFront">Upload Government ID (front)</label><input id="idFront" type="file" accept="image/*,application/pdf" required></div>
+          <div><label for="idBack">Upload Government ID (back)</label><input id="idBack" type="file" accept="image/*,application/pdf" required></div>
+        </div>
+        <div>
+          <label for="proofAddress">Upload Proof of Address (utility bill, lease, or bank statement)</label>
+          <input id="proofAddress" type="file" accept="image/*,application/pdf" required>
+        </div>
+
+        <h4>Credit Details (check all that apply)</h4>
+        <div class="grid three">
+          <label class="field-inline"><input type="checkbox" value="Misspelled names/wrong personal info"/> Misspelled names / wrong personal info</label>
+          <label class="field-inline"><input type="checkbox" value="Wrong SSN digits or wrong DOB"/> Wrong SSN digits / wrong DOB</label>
+          <label class="field-inline"><input type="checkbox" value="Wrong address / duplicate addresses"/> Wrong address / duplicate addresses</label>
+          <label class="field-inline"><input type="checkbox" value="Inquiries to review"/> Inquiries to review</label>
+          <label class="field-inline"><input type="checkbox" value="Account shows wrong/missing digits"/> Account shows wrong / missing digits</label>
+          <label class="field-inline"><input type="checkbox" value="Late payments to dispute"/> Late payments to dispute</label>
+          <label class="field-inline"><input type="checkbox" value="Identity theft (docs available)"/> Identity theft (I have documentation)</label>
+          <label class="field-inline"><input type="checkbox" value="Bankruptcy / serious items"/> Bankruptcy / serious items</label>
+          <label class="field-inline"><input type="checkbox" value="Other"/> Other (describe below)</label>
+        </div>
+        <label for="mainConcern">Describe your main concern</label>
+        <textarea id="mainConcern" rows="4" placeholder="Tell us the main issues in your own words..."></textarea>
+
+        <h4>Authorizations & Acknowledgments</h4>
+        <label class="field-inline"><input id="ack1" type="checkbox" required/> I understand Stayton Credit Repair cannot guarantee specific results or score changes.</label>
+        <label class="field-inline"><input id="ack2" type="checkbox" required/> I understand timeframes are estimates (~30 / 30–60 / 60–120 days).</label>
+        <label class="field-inline"><input id="ack3" type="checkbox" required/> I agree to provide truthful and accurate information.</label>
+        <label class="field-inline"><input id="ack4" type="checkbox" required/> I understand I can cancel monthly service within the first three (3) days. If I cancel mid‑month after that window, I owe the entire month; late payments incur a $75 charge.</label>
+        <label class="field-inline"><input id="ack5" type="checkbox"/> I consent to receive emails and texts related to my case.</label>
+
+        <h4>Signature</h4>
+        <p class="hint">Draw or type your name as a signature.</p>
+        <div class="row">
+          <div>
+            <canvas id="sigCanvas" width="500" height="180" style="border:1px solid #d1d5db;border-radius:8px;background:#fff"></canvas>
+            <div class="actions" style="margin-top:8px">
+              <button class="btn" type="button" onclick="clearSig()">Clear</button>
+            </div>
+          </div>
+          <div>
+            <label for="typedSig">Type your name (optional)</label>
+            <input id="typedSig" placeholder="Type full name" />
+          </div>
+        </div>
+
+        <div class="actions" style="margin-top:16px">
+          <button class="btn gold" type="submit">Submit Intake</button>
+        </div>
+        <p class="hint">Submitting will generate an email draft to <strong>JosephStayton36@gmail.com</strong> with your details. File uploads are noted; attach them to the email before sending.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container grid two">
+      <div>
+        <h3>FAQ</h3>
+        <details class="card"><summary>Do you guarantee results?</summary><p>No. We dispute inaccurate, unverifiable, and incomplete items only. No guarantee of score changes or removals.</p></details>
+        <details class="card"><summary>Can I do this myself?</summary><p>Yes. You can dispute items with the bureaus at no cost. Some people prefer help to organize letters and timelines.</p></details>
+        <details class="card"><summary>How long will it take?</summary><p>Small items ≈ 30 days. Moderate items ≈ 30–60 days. Serious items ≈ 60–120 days. These are estimates.</p></details>
+        <details class="card"><summary>When do I pay?</summary><p>$150 for the consultation. If you continue, $99/mo for dispute work. First 10 inquiries free; $15 each after.</p></details>
+      </div>
+      <aside class="card">
+        <h4>Important Notes & Disclaimers</h4>
+        <ul class="checklist">
+          <li>We do not guarantee specific score changes or outcomes.</li>
+          <li>Timeframes (30 / 30–60 / 60–120 days) are estimates; bureaus/furnishers control response times.</li>
+          <li>We dispute inaccurate, unverifiable, and incomplete information only.</li>
+          <li>We do not remove accurate, verifiable items.</li>
+          <li>We are not a law firm and do not provide legal advice.</li>
+          <li>You can cancel monthly service within the first three (3) days; mid‑month cancellation after that owes the full month; late fee $75.</li>
+          <li>We protect your privacy and handle documents securely.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container grid two">
+      <div>
+        <h3>Contact Stayton Credit Repair</h3>
+        <p><strong>Phone:</strong> <a href="tel:+16828889241">682‑888‑9241</a><br>
+           <strong>Email:</strong> <a href="mailto:JosephStayton36@gmail.com">JosephStayton36@gmail.com</a><br>
+           <strong>Hours:</strong> Mon–Sat, 9:00 a.m. – 7:00 p.m. CT</p>
+        <p class="muted">Prefer to talk live? Call or email and we’ll schedule your $150 consultation.</p>
+      </div>
+      <form id="contactForm" class="card" onsubmit="handleContact(event)">
+        <h4>Send a Message</h4>
+        <label for="cName">Name</label>
+        <input id="cName" required>
+        <label for="cEmail">Email</label>
+        <input id="cEmail" type="email" required>
+        <label for="cPhone">Phone</label>
+        <input id="cPhone" type="tel">
+        <label for="cMsg">What's the main issue?</label>
+        <textarea id="cMsg" rows="4" required></textarea>
+        <div class="actions" style="margin-top:10px">
+          <button class="btn gold" type="submit">Send</button>
+        </div>
+        <p class="hint">This creates an email draft to <strong>JosephStayton36@gmail.com</strong>.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Client Portal -->
+  <section id="portal">
+    <div class="container">
+      <h3>Client Portal</h3>
+      <div class="card">
+        <p>Login to track disputes, view updates, upload documents, and message us securely. (For current clients.)</p>
+        <div class="row">
+          <div><label for="portalEmail">Email</label><input id="portalEmail" type="email"></div>
+          <div><label for="portalPass">Password</label><input id="portalPass" type="password"></div>
+        </div>
+        <div class="actions" style="margin-top:10px">
+          <button class="btn" type="button" onclick="alert('Portal coming soon')">Log In</button>
+          <button class="btn ghost" type="button" onclick="alert('Portal signup coming soon')">Create Account</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>&copy; 2025 Stayton Credit Repair. All rights reserved.</strong>
+        <div class="quick-links" aria-label="Quick links">
+          <a href="#home">Home</a>
+          <a href="#services">Services & Pricing</a>
+          <a href="#customization">Customization</a>
+          <a href="#timelines">Timelines</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a href="#portal">Client Portal</a>
+        </div>
+      </div>
+      <div>
+        <p>Call <a href="tel:+16828889241">682‑888‑9241</a> • Email <a href="mailto:JosephStayton36@gmail.com">JosephStayton36@gmail.com</a></p>
+        <p class="hint">Mon–Sat, 9:00 a.m. – 7:00 p.m. Central Time</p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="float-contact" href="#contact">Book Consultation ($150)</a>
+
+  <script>
+    // Mobile nav toggle
+    function toggleMenu(){
+      const nav = document.getElementById('mainnav');
+      const visible = nav.style.display === 'block';
+      nav.style.display = visible ? 'none' : 'block';
+    }
+    // Start collapsed on small screens
+    function initMenu(){
+      if (window.innerWidth < 990){
+        document.getElementById('mainnav').style.display='none';
+        document.querySelector('.menu-toggle').style.display='inline-block';
+      }
+    }
+    window.addEventListener('resize', initMenu);
+    window.addEventListener('DOMContentLoaded', initMenu);
+
+    // Save customization choices to localStorage as a simple client-side store
+    function handleCustomize(e){
+      e.preventDefault();
+      const data = {
+        timeline: document.getElementById('timelineCat').value,
+        apptType: document.getElementById('apptType').value,
+        extraInquiries: parseInt(document.getElementById('extraInquiries').value||'0',10)
+      };
+      localStorage.setItem('scr_customization', JSON.stringify(data));
+      alert('Preferences saved. We\'ll confirm everything during your $150 consultation.');
+    }
+
+    // Contact form -> mailto draft
+    function handleContact(e){
+      e.preventDefault();
+      const name = document.getElementById('cName').value.trim();
+      const email = document.getElementById('cEmail').value.trim();
+      const phone = document.getElementById('cPhone').value.trim();
+      const msg = document.getElementById('cMsg').value.trim();
+      const subject = encodeURIComponent('Website contact from '+name);
+      const body = encodeURIComponent(
+`Name: ${name}
+Email: ${email}
+Phone: ${phone}
+\nIssue:\n${msg}`);
+      window.location.href = `mailto:JosephStayton36@gmail.com?subject=${subject}&body=${body}`;
+    }
+
+    // Intake signature canvas
+    const canvas = document.getElementById('sigCanvas');
+    const ctx = canvas.getContext && canvas.getContext('2d');
+    let drawing=false, last={x:0,y:0};
+    if (ctx){
+      canvas.addEventListener('mousedown', e=>{drawing=true; last=getPos(e)});
+      canvas.addEventListener('mousemove', e=>{if(!drawing)return; drawStroke(last,getPos(e)); last=getPos(e)});
+      window.addEventListener('mouseup', ()=>drawing=false);
+      canvas.addEventListener('touchstart', e=>{e.preventDefault(); drawing=true; last=getPos(e.touches[0])});
+      canvas.addEventListener('touchmove', e=>{e.preventDefault(); if(!drawing)return; const p=getPos(e.touches[0]); drawStroke(last,p); last=p});
+      window.addEventListener('touchend', ()=>drawing=false);
+    }
+    function getPos(e){
+      const r = canvas.getBoundingClientRect();
+      return {x:e.clientX - r.left, y:e.clientY - r.top};
+    }
+    function drawStroke(a,b){
+      ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#111';ctx.lineWidth=2.2;
+      ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+    }
+    function clearSig(){ ctx && ctx.clearRect(0,0,canvas.width,canvas.height); document.getElementById('typedSig').value=''; }
+
+    // Intake -> mailto draft (files require manual attach by the user in their mail client)
+    function handleIntake(e){
+      e.preventDefault();
+      const fields = ['firstName','lastName','phone','email','street','city','state','zip','ssnLast4','dob','mainConcern','typedSig'];
+      const data = {};
+      fields.forEach(id=> data[id] = (document.getElementById(id).value||'').trim());
+
+      // collect checked issues
+      const checks = Array.from(document.querySelectorAll('#intakeForm input[type=checkbox]:checked')).map(c=>c.value).join(', ');
+
+      // signature image as data URL (note: too large for some mail clients; included as note)
+      let sigNote = '';
+      try{ sigNote = canvas.toDataURL('image/png').slice(0,60) ? '[Signature captured; attach screenshot if needed]' : ''; }catch(err){ sigNote=''; }
+
+      const subject = encodeURIComponent('New Intake – '+data.firstName+' '+data.lastName);
+      const body = encodeURIComponent(
+`Contact\n-------
+Name: ${data.firstName} ${data.lastName}
+Phone: ${data.phone}
+Email: ${data.email}
+Address: ${data.street}, ${data.city}, ${data.state} ${data.zip}
+\nIdentity\n--------
+Last 4 SSN: ${data.ssnLast4}
+DOB: ${data.dob}
+\nIssues (checked)\n-----------------
+${checks}
+\nMain Concern\n------------
+${data.mainConcern}
+\nAuthorizations\n--------------
+[acknowledged via required checkboxes]
+\nSignature\n---------
+Typed: ${data.typedSig || '(n/a)'}
+Canvas: ${sigNote}
+\nUploads to attach manually\n--------------------------
+• Government ID (front + back)\n• Proof of Address\n`);
+      window.location.href = `mailto:JosephStayton36@gmail.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>

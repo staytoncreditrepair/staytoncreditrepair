@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stayton Credit Repair</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <meta name="description" content="Stayton Credit Repair — Navy/Gold professional site with pricing, printable forms, booking, and contact." />
+</head>
+<body>
+<header class="header">
+  <div class="container inner">
+    <div class="brand">
+      <img src="assets/logo-placeholder.svg" alt="Stayton Credit Repair logo"/>
+      <div>
+        <div class="title">Stayton Credit Repair</div>
+        <div class="tagline">World's Best Credit Repair • Navy/Gold</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#pricing">Pricing</a>
+      <a href="#forms">Forms</a>
+      <a href="#booking">Book</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Fix errors. Build credit. Get results—professionally.</h1>
+    <p>We help identify and dispute inaccuracies under the FCRA, organize goodwill and validation letters, and guide your next steps.
+       Clear pricing, printable forms, and fast contact—everything you need to start today.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#pricing">See Pricing</a>
+      <a class="btn btn-outline" href="#forms">Download Forms</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="container">
+    <h2>Pricing</h2>
+    <p class="lead">Transparent. No score guarantees—just diligent, compliant work.</p>
+
+    <div class="pricing">
+      <div class="card">
+        <h3>Credit Audit & Plan</h3>
+        <div class="price">$150</div>
+        <div class="small">One-time onboarding session</div>
+        <ul class="list">
+          <li>Review all three bureaus together</li>
+          <li>Prioritize disputes with a monthly plan</li>
+          <li>Setup and document strategy</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Monthly Service</h3>
+        <div class="price">$99</div>
+        <div class="small">Billed monthly; cancel anytime</div>
+        <ul class="list">
+          <li>First <b>10 inquiries free</b>; then $10 per additional inquiry</li>
+          <li>30–45 days: simple ID/address/name fixes</li>
+          <li>1–3 months: not-yours accounts</li>
+          <li>6–8 months: late pays/identity issues</li>
+          <li>~12 months: major items (repo/bankruptcy)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Pick a Focus</h3>
+        <label for="focus">Choose what you need:</label>
+        <select id="focus" class="input">
+          <option value="inquiries">Inquiries</option>
+          <option value="personal-info">Personal info corrections</option>
+          <option value="not-yours">Not-yours account</option>
+          <option value="late-pay">Late payment goodwill</option>
+          <option value="validation">Debt validation</option>
+        </select>
+        <p class="small">You can change this focus anytime.</p>
+      </div>
+    </div>
+
+    <div class="notice" style="margin-top:16px">
+      <b>Disclaimer:</b> We do not guarantee any score change or specific outcome. Timeframes are typical estimates only.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="forms">
+  <div class="container">
+    <h2>Printable Forms</h2>
+    <p class="lead">Open these, review, and print. Each page is formatted for clean printing.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Client Intake</h3>
+        <span class="badge">Printable</span><br/>
+        <a href="forms/client-intake.html" class="btn btn-outline" target="_blank" rel="noopener">Open</a>
+        <button class="btn btn-primary" data-print>Print This Page</button>
+      </div>
+      <div class="card">
+        <h3>Service Agreement</h3>
+        <span class="badge">Printable</span><br/>
+        <a href="forms/service-agreement.html" class="btn btn-outline" target="_blank" rel="noopener">Open</a>
+        <button class="btn btn-primary" data-print>Print This Page</button>
+      </div>
+      <div class="card">
+        <h3>Payment Authorization</h3>
+        <span class="badge">Printable</span><br/>
+        <a href="forms/payment-authorization.html" class="btn btn-outline" target="_blank" rel="noopener">Open</a>
+        <button class="btn btn-primary" data-print>Print This Page</button>
+      </div>
+      <div class="card">
+        <h3>Privacy & Disclaimer</h3>
+        <span class="badge">Printable</span><br/>
+        <a href="forms/privacy-disclaimer.html" class="btn btn-outline" target="_blank" rel="noopener">Open</a>
+        <button class="btn btn-primary" data-print>Print This Page</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="booking">
+  <div class="container grid-two">
+    <div>
+      <h2>Book an Appointment</h2>
+      <p class="lead">Choose a time and tell us what you want to focus on. We'll confirm fast.</p>
+      <form id="booking-form">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div>
+            <label>Name</label>
+            <input class="input" name="name" required />
+          </div>
+          <div>
+            <label>Phone</label>
+            <input class="input" name="phone" required />
+          </div>
+          <div>
+            <label>Email</label>
+            <input class="input" name="email" type="email" required />
+          </div>
+          <div>
+            <label>Preferred Date</label>
+            <input class="input" name="date" type="date" required />
+          </div>
+        </div>
+        <div style="margin-top:12px">
+          <label>What are your main issues?</label>
+          <textarea class="input" name="notes" rows="4" placeholder="Tell us what's wrong on your reports..."></textarea>
+        </div>
+        <div style="margin-top:12px">
+          <button class="btn btn-primary" type="submit">Save Appointment</button>
+          <span id="booking-status" class="small" style="margin-left:10px"></span>
+        </div>
+      </form>
+    </div>
+    <div>
+      <div class="card">
+        <h3>What to bring</h3>
+        <ul class="list">
+          <li>Government ID (driver license)</li>
+          <li>Recent 3-bureau reports (PDF if possible)</li>
+          <li>Any debt letters you've received</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Typical timelines</h3>
+        <ul class="list">
+          <li>30–45 days: basic info fixes & inquiries</li>
+          <li>1–3 months: not-yours accounts</li>
+          <li>6–8 months: late payments & identity issues</li>
+          <li>~12 months: major items (repo/bankruptcy)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p class="lead">Have questions? Send a message and we’ll reply quickly.</p>
+    <form id="contact-form">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div>
+          <label>Full Name</label>
+          <input class="input" name="name" required/>
+        </div>
+        <div>
+          <label>Email</label>
+          <input class="input" type="email" name="email" required/>
+        </div>
+        <div>
+          <label>Phone</label>
+          <input class="input" name="phone"/>
+        </div>
+        <div>
+          <label>Topic</label>
+          <select class="input" name="topic">
+            <option>General Question</option>
+            <option>Start Service</option>
+            <option>Billing</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-top:12px">
+        <label>Message</label>
+        <textarea class="input" rows="5" name="message" placeholder="Tell us what's going on with your reports..."></textarea>
+      </div>
+      <div style="margin-top:12px">
+        <button class="btn btn-primary" type="submit">Send</button>
+        <span id="contact-status" class="small" style="margin-left:10px"></span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center">
+      <div>© <span id="y"></span> Stayton Credit Repair</div>
+      <div><a href="#privacy">Privacy</a> • <a href="#forms">Forms</a></div>
+    </div>
+    <div class="print-only" style="margin-top:10px">Printed from staytoncreditrepair.local</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+<script src="script.js"></script>
+</body>
+</html>

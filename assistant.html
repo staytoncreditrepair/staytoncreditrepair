@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Credit Assistant | Stayton Credit Repair</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="AI-assisted credit analysis and education. FCRA-compliant, educational, and secure." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-main:#020617;
+      --bg-panel:#020b1c;
+      --bg-card:rgba(255,255,255,0.06);
+      --accent:#38bdf8;
+      --accent-strong:#0ea5e9;
+      --text-main:#f8fafc;
+      --text-soft:#cbd5e1;
+      --text-muted:#94a3b8;
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    body{
+      font-family:Inter,system-ui,sans-serif;
+      background:var(--bg-main);
+      color:var(--text-main);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* Header */
+    header{
+      padding:18px 26px;
+      border-bottom:1px solid rgba(255,255,255,.05);
+      background:rgba(2,6,23,.8);
+      backdrop-filter:blur(12px);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    header strong{
+      color:var(--accent);
+      font-size:16px;
+    }
+
+    header a{
+      font-size:14px;
+      color:var(--text-soft);
+      text-decoration:none;
+    }
+
+    /* Layout */
+    .container{
+      flex:1;
+      display:grid;
+      grid-template-columns:1fr;
+      max-width:1100px;
+      margin:auto;
+      width:100%;
+      padding:24px;
+    }
+
+    .panel{
+      background:var(--bg-card);
+      backdrop-filter:blur(18px);
+      border-radius:var(--radius);
+      box-shadow:0 40px 90px rgba(0,0,0,.55);
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+    }
+
+    /* Messages */
+    .messages{
+      flex:1;
+      padding:26px;
+      overflow-y:auto;
+    }
+
+    .msg{
+      max-width:80%;
+      margin-bottom:16px;
+      padding:14px 18px;
+      border-radius:16px;
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    .ai{
+      background:rgba(56,189,248,.12);
+      color:#e6f6ff;
+    }
+
+    .user{
+      background:#020b1c;
+      margin-left:auto;
+      color:var(--text-soft);
+    }
+
+    /* Input */
+    .input{
+      border-top:1px solid rgba(255,255,255,.05);
+      padding:18px;
+      display:flex;
+      gap:12px;
+      background:rgba(2,6,23,.85);
+    }
+
+    .input input{
+      flex:1;
+      padding:14px;
+      border-radius:14px;
+      border:none;
+      background:#020b1c;
+      color:var(--text-main);
+      font-size:15px;
+    }
+
+    .input button{
+      padding:14px 22px;
+      border-radius:14px;
+      border:none;
+      font-weight:600;
+      background:linear-gradient(135deg,var(--accent),var(--accent-strong));
+      color:#020617;
+      cursor:pointer;
+    }
+
+    /* Disclaimer */
+    .disclaimer{
+      font-size:12px;
+      color:var(--text-muted);
+      padding:14px 22px;
+      border-top:1px solid rgba(255,255,255,.05);
+      background:#020617;
+      line-height:1.6;
+    }
+
+    @media(max-width:700px){
+      .msg{max-width:100%}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <strong>AI Credit Assistant</strong>
+  <a href="dashboard.html">← Back to Dashboard</a>
+</header>
+
+<div class="container">
+  <div class="panel">
+
+    <div class="messages" id="messages">
+      <div class="msg ai">
+        Hello. I’m your AI Credit Assistant.<br><br>
+        I help explain credit reports, dispute processes, and next steps
+        using FCRA-compliant educational guidance.
+        <br><br>
+        How can I help today?
+      </div>
+    </div>
+
+    <div class="input">
+      <input id="input" placeholder="Ask about disputes, collections, charge-offs…" />
+      <button onclick="send()">Send</button>
+    </div>
+
+    <div class="disclaimer">
+      This AI provides educational credit information only.  
+      It does not provide legal advice, guarantee outcomes, or modify factual credit data.
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const messages = document.getElementById("messages");
+  const input = document.getElementById("input");
+
+  function send(){
+    const text = input.value.trim();
+    if(!text) return;
+
+    addMsg(text,"user");
+    input.value="";
+
+    setTimeout(()=>{
+      addMsg(generateReply(text),"ai");
+      messages.scrollTop = messages.scrollHeight;
+    },600);
+  }
+
+  function addMsg(text,type){
+    const div=document.createElement("div");
+    div.className=`msg ${type}`;
+    div.textContent=text;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function generateReply(q){
+    q=q.toLowerCase();
+
+    if(q.includes("collection")){
+      return "Collections appear when a creditor reports an unpaid balance. Not all collections are accurate or properly verified. Disputes focus on accuracy, ownership, and reporting compliance under the FCRA.";
+    }
+
+    if(q.includes("late")){
+      return "Late payments impact payment history, the largest scoring factor. Disputes may apply if dates, balances, or reporting timelines are inaccurate.";
+    }
+
+    if(q.includes("score")){
+      return "Credit scores are influenced by payment history, utilization, age, mix, and inquiries. Dispute results vary depending on bureau responses and data accuracy.";
+    }
+
+    if(q.includes("guarantee")){
+      return "No credit outcome can be guaranteed. Lawful credit repair focuses on correcting inaccurate, incomplete, or unverifiable information.";
+    }
+
+    return "I can help explain credit items, dispute stages, and general improvement strategies. Let me know what specific issue you’d like to understand.";
+  }
+</script>
+
+</body>
+</html>

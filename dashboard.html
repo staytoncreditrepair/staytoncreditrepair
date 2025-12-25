@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Client Dashboard | Stayton Credit Repair</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Secure client dashboard for credit monitoring, dispute tracking, and document management." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #020617;
+      --bg-panel: #020b1c;
+      --card-bg: rgba(255,255,255,0.06);
+
+      --accent: #38bdf8;
+      --accent-strong: #0ea5e9;
+
+      --text-main: #f8fafc;
+      --text-soft: #cbd5e1;
+      --text-muted: #94a3b8;
+
+      --radius-lg: 18px;
+      --radius-md: 14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+    }
+
+    /* ===================== SIDEBAR ===================== */
+    aside {
+      background: var(--bg-panel);
+      padding: 28px 22px;
+      border-right: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--accent);
+      margin-bottom: 40px;
+    }
+
+    .nav a {
+      display: block;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      color: var(--text-soft);
+      text-decoration: none;
+    }
+
+    .nav a.active,
+    .nav a:hover {
+      background: rgba(56,189,248,0.12);
+      color: var(--accent);
+    }
+
+    /* ===================== MAIN ===================== */
+    main {
+      padding: 36px 40px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .topbar h1 {
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    .badge {
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      background: rgba(34,197,94,0.15);
+      color: #4ade80;
+    }
+
+    /* ===================== GRID ===================== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+      margin-bottom: 36px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+    }
+
+    .card h3 {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .score {
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .trend {
+      font-size: 13px;
+      color: #4ade80;
+    }
+
+    /* ===================== DISPUTES ===================== */
+    .timeline {
+      margin-top: 10px;
+    }
+
+    .event {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      margin-top: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ===================== DOCS ===================== */
+    .doc {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      font-size: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .doc span {
+      color: var(--text-muted);
+    }
+
+    .upload {
+      margin-top: 12px;
+      padding: 10px;
+      text-align: center;
+      border-radius: var(--radius-md);
+      background: rgba(56,189,248,0.15);
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    /* ===================== MOBILE ===================== */
+    @media (max-width: 900px) {
+      body {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        display: none;
+      }
+
+      main {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===================== SIDEBAR ===================== -->
+  <aside>
+    <div class="logo">Stayton Portal</div>
+
+    <nav class="nav">
+      <a class="active" href="#">Dashboard</a>
+      <a href="#">Credit Health</a>
+      <a href="#">Disputes</a>
+      <a href="#">Documents</a>
+      <a href="#">Messages</a>
+      <a href="#">Billing</a>
+      <a href="#">Settings</a>
+      <a href="index.html">Log Out</a>
+    </nav>
+  </aside>
+
+  <!-- ===================== MAIN ===================== -->
+  <main>
+
+    <div class="topbar">
+      <h1>Welcome back, Client</h1>
+      <div class="badge">Account Active</div>
+    </div>
+
+    <!-- Credit Scores -->
+    <div class="grid">
+      <div class="card">
+        <h3>Experian</h3>
+        <div class="score">—</div>
+        <div class="trend">Awaiting data</div>
+      </div>
+
+      <div class="card">
+        <h3>Equifax</h3>
+        <div class="score">—</div>
+        <div class="trend">Awaiting data</div>
+      </div>
+
+      <div class="card">
+        <h3>TransUnion</h3>
+        <div class="score">—</div>
+        <div class="trend">Awaiting data</div>
+      </div>
+    </div>
+
+    <!-- Disputes + Documents -->
+    <div class="grid">
+
+      <div class="card">
+        <h3>Dispute Timeline</h3>
+        <div class="timeline">
+          <div class="event"><div class="dot"></div>Round 1 disputes submitted</div>
+          <div class="event"><div class="dot"></div>Bureau responses pending</div>
+          <div class="event"><div class="dot"></div>Next review scheduled</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Secure Documents</h3>
+        <div class="doc">Government ID <span>Pending</span></div>
+        <div class="doc">Proof of Address <span>Received</span></div>
+        <div class="doc">Authorization Form <span>Received</span></div>
+
+        <div class="upload">Upload New Document</div>
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

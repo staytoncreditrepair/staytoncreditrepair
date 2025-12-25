@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Secure Intake | Stayton Credit Repair</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Secure onboarding for Stayton Credit Repair clients. Private, encrypted, and FCRA-compliant." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main:#020617;
+      --bg-card:rgba(255,255,255,0.06);
+      --accent:#38bdf8;
+      --accent-strong:#0ea5e9;
+      --text-main:#f8fafc;
+      --text-soft:#cbd5e1;
+      --text-muted:#94a3b8;
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    body{
+      font-family:Inter,system-ui,sans-serif;
+      background:var(--bg-main);
+      color:var(--text-main);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 16px;
+    }
+
+    .container{
+      width:100%;
+      max-width:720px;
+      background:var(--bg-card);
+      backdrop-filter:blur(18px);
+      border-radius:var(--radius);
+      padding:36px;
+      box-shadow:0 40px 90px rgba(0,0,0,.55);
+    }
+
+    h1{
+      font-size:28px;
+      margin-bottom:10px;
+    }
+
+    p{
+      color:var(--text-soft);
+      margin-bottom:24px;
+      line-height:1.6;
+    }
+
+    /* Progress */
+    .progress{
+      display:flex;
+      gap:10px;
+      margin-bottom:30px;
+    }
+
+    .step{
+      flex:1;
+      height:6px;
+      border-radius:999px;
+      background:rgba(255,255,255,.1);
+    }
+
+    .step.active{
+      background:linear-gradient(135deg,var(--accent),var(--accent-strong));
+    }
+
+    /* Form */
+    .form-step{
+      display:none;
+    }
+
+    .form-step.active{
+      display:block;
+    }
+
+    label{
+      font-size:14px;
+      color:var(--text-muted);
+      display:block;
+      margin-bottom:6px;
+    }
+
+    input,select{
+      width:100%;
+      padding:14px;
+      margin-bottom:18px;
+      border-radius:12px;
+      border:none;
+      background:#020b1c;
+      color:var(--text-main);
+      font-size:15px;
+    }
+
+    input::placeholder{
+      color:#64748b;
+    }
+
+    .actions{
+      display:flex;
+      justify-content:space-between;
+      margin-top:20px;
+    }
+
+    .btn{
+      padding:12px 22px;
+      border-radius:12px;
+      font-weight:600;
+      border:none;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--accent),var(--accent-strong));
+      color:#020617;
+    }
+
+    .btn-secondary{
+      background:none;
+      color:var(--text-soft);
+    }
+
+    .notice{
+      font-size:12px;
+      color:var(--text-muted);
+      margin-top:20px;
+      line-height:1.6;
+    }
+
+    .lock{
+      margin-top:10px;
+      font-size:13px;
+      color:#7dd3fc;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Secure Client Intake</h1>
+  <p>Your information is encrypted, private, and used only for lawful credit dispute assistance.</p>
+
+  <!-- Progress -->
+  <div class="progress">
+    <div class="step active"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="form-step active">
+    <label>Full Legal Name</label>
+    <input placeholder="John A. Doe">
+
+    <label>Email Address</label>
+    <input type="email" placeholder="you@email.com">
+
+    <label>Phone Number</label>
+    <input placeholder="(555) 123-4567">
+
+    <div class="actions">
+      <span></span>
+      <button class="btn btn-primary" onclick="nextStep()">Continue</button>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="form-step">
+    <label>Date of Birth</label>
+    <input type="date">
+
+    <label>Current Address</label>
+    <input placeholder="Street, City, State, ZIP">
+
+    <label>Last 4 of SSN</label>
+    <input placeholder="****">
+
+    <div class="actions">
+      <button class="btn btn-secondary" onclick="prevStep()">Back</button>
+      <button class="btn btn-primary" onclick="nextStep()">Continue</button>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="form-step">
+    <label>Primary Credit Goal</label>
+    <select>
+      <option>Improve Score</option>
+      <option>Remove Negative Items</option>
+      <option>Prepare for Mortgage</option>
+      <option>Auto Loan Approval</option>
+    </select>
+
+    <label>Biggest Credit Concern</label>
+    <select>
+      <option>Collections</option>
+      <option>Charge-offs</option>
+      <option>Late Payments</option>
+      <option>Mixed File / Errors</option>
+    </select>
+
+    <div class="actions">
+      <button class="btn btn-secondary" onclick="prevStep()">Back</button>
+      <button class="btn btn-primary" onclick="nextStep()">Continue</button>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="form-step">
+    <label>Authorization Acknowledgement</label>
+    <select>
+      <option>I authorize Stayton Credit Repair to assist with lawful credit disputes.</option>
+    </select>
+
+    <div class="notice">
+      Stayton Credit Repair provides credit education and dispute assistance only.
+      We do not guarantee outcomes, alter factual information, or provide legal advice.
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-secondary" onclick="prevStep()">Back</button>
+      <a href="dashboard.html" class="btn btn-primary">Finish & Enter Dashboard</a>
+    </div>
+
+    <div class="lock">🔒 Secure • Encrypted • Private</div>
+  </div>
+
+</div>
+
+<script>
+  let current = 0;
+  const steps = document.querySelectorAll('.form-step');
+  const bars = document.querySelectorAll('.step');
+
+  function update(){
+    steps.forEach((s,i)=>s.classList.toggle('active',i===current));
+    bars.forEach((b,i)=>b.classList.toggle('active',i<=current));
+  }
+
+  function nextStep(){
+    if(current < steps.length - 1){
+      current++;
+      update();
+    }
+  }
+
+  function prevStep(){
+    if(current > 0){
+      current--;
+      update();
+    }
+  }
+</script>
+
+</body>
+</html>

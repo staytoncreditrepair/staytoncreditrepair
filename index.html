@@ -1,290 +1,366 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Stayton Credit Repair | AI-Powered Credit Platform</title>
 
-  <!-- ✅ SEO Essentials -->
-  <title>Credit Repair in North Richland Hills, TX | Stayton Credit Repair</title>
-  <meta name="description" content="Stayton Credit Repair helps North Richland Hills, Hurst, Euless, Bedford and Tarrant County improve credit by removing inaccurate items, fixing identity theft issues, and disputing errors. $150 credit audit, $99/month. First 15 inquiries removed free.">
-  <meta name="keywords" content="credit repair near me, credit repair North Richland Hills TX, Tarrant County credit repair, fix my credit, remove inquiries, identity theft credit help, credit dispute services, Hurst, Euless, Bedford, Fort Worth">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="AI-powered, FCRA-compliant credit repair platform with secure client dashboards, dispute tracking, and intelligent credit strategy." />
 
-  <!-- ✅ Canonical & Language -->
-  <link rel="canonical" href="https://staytoncreditrepair.github.io/">
-  <link rel="alternate" hreflang="en-us" href="https://staytoncreditrepair.github.io/">
-  <meta name="robots" content="index, follow">
+  <!-- Favicon (optional later) -->
+  <!-- <link rel="icon" href="/assets/favicon.ico" /> -->
 
-  <!-- ✅ Open Graph (Facebook / Social Preview) -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Stayton Credit Repair — Local Credit Repair in North Richland Hills, TX">
-  <meta property="og:description" content="Professional, affordable credit repair. Helping Tarrant County dispute errors, remove late payments, inquiries and identity theft accounts. Book online today.">
-  <meta property="og:url" content="https://staytoncreditrepair.github.io/">
-  <meta property="og:image" content="https://staytoncreditrepair.github.io/assets/img/logo.svg">
-  <meta property="og:site_name" content="Stayton Credit Repair">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- ✅ Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Credit Repair in North Richland Hills, TX | Stayton Credit Repair">
-  <meta name="twitter:description" content="Transparent pricing. $150 audit, $99/month. First 15 inquiries free. Local credit repair in North Richland Hills & Tarrant County.">
-  <meta name="twitter:image" content="https://staytoncreditrepair.github.io/assets/img/logo.svg">
+  <style>
+    /* ===================== ROOT ===================== */
+    :root {
+      --bg-main: #020617;
+      --bg-soft: #020b1c;
+      --card-bg: rgba(255,255,255,0.08);
 
-  <!-- ✅ LocalBusiness Schema for Google (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FinancialService",
-    "name": "Stayton Credit Repair",
-    "image": "https://staytoncreditrepair.github.io/assets/img/logo.svg",
-    "url": "https://staytoncreditrepair.github.io/",
-    "telephone": "+1-682-888-9241",
-    "email": "staytoncreditrepair@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "8500 Harwood Rd #6718",
-      "addressLocality": "North Richland Hills",
-      "addressRegion": "TX",
-      "postalCode": "76180",
-      "addressCountry": "US"
-    },
-    "priceRange": "$$",
-    "areaServed": [
-      "North Richland Hills",
-      "Hurst",
-      "Euless",
-      "Bedford",
-      "Fort Worth",
-      "Tarrant County"
-    ],
-    "description": "Credit repair and identity theft assistance for North Richland Hills and Tarrant County. Disputes, inquiry removal, late payment challenges and more."
-  }
-  </script>
+      --accent: #38bdf8;
+      --accent-strong: #0ea5e9;
 
-  <!-- ✅ Your existing site styles & scripts -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script defer src="assets/js/main.js"></script>
+      --text-main: #f8fafc;
+      --text-soft: #cbd5e1;
+      --text-muted: #94a3b8;
+
+      --radius-lg: 22px;
+      --radius-md: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===================== NAV ===================== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 50;
+      background: rgba(2,6,23,0.75);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav {
+      max-width: 1300px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+    }
+
+    .nav-links a {
+      margin-left: 24px;
+      font-size: 14px;
+      color: var(--text-soft);
+      opacity: 0.9;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      padding-top: 120px;
+      background: radial-gradient(circle at top right, #0ea5e9 0%, #020617 45%);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(2,6,23,0.6),
+        rgba(2,6,23,0.92)
+      );
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 2;
+      max-width: 1300px;
+      margin: auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 64px;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1.1;
+      margin-bottom: 22px;
+      font-weight: 700;
+    }
+
+    .hero-subtext {
+      max-width: 520px;
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--text-soft);
+      margin-bottom: 32px;
+    }
+
+    .hero-trust {
+      list-style: none;
+      margin-bottom: 40px;
+    }
+
+    .hero-trust li {
+      margin-bottom: 8px;
+      font-size: 15px;
+      color: #e5e7eb;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color: #020617;
+      padding: 14px 30px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      box-shadow: 0 14px 45px rgba(56,189,248,0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 70px rgba(56,189,248,0.55);
+    }
+
+    .btn-secondary {
+      padding: 14px 24px;
+      color: var(--text-soft);
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    .btn-secondary:hover {
+      opacity: 1;
+    }
+
+    /* ===================== HERO VISUAL ===================== */
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .glass-card {
+      width: 100%;
+      max-width: 390px;
+      background: var(--card-bg);
+      backdrop-filter: blur(18px);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: 0 45px 90px rgba(0,0,0,0.5);
+    }
+
+    .glass-card h3 {
+      margin-bottom: 6px;
+      font-size: 20px;
+    }
+
+    .glass-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+
+    .score-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .score {
+      background: rgba(2,6,23,0.6);
+      padding: 14px;
+      border-radius: var(--radius-md);
+      text-align: center;
+    }
+
+    .score span {
+      display: block;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .score strong {
+      font-size: 20px;
+      color: var(--accent);
+    }
+
+    .status-pill {
+      text-align: center;
+      font-size: 13px;
+      padding: 10px;
+      border-radius: 999px;
+      background: rgba(56,189,248,0.15);
+      color: #7dd3fc;
+    }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ===================== MOBILE ===================== */
+    @media (max-width: 900px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-subtext {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<header class="header">
-  <div class="container inner">
-    <div class="brand">
-      <img src="assets/logo-placeholder.svg" alt="Stayton Credit Repair logo"/>
-      <div>
-        <div class="title">Stayton Credit Repair</div>
-        <div class="tagline">World's Best Credit Repair • Navy/Gold</div>
-      </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header>
+    <div class="nav">
+      <div class="brand">Stayton Credit Repair</div>
+      <nav class="nav-links">
+        <a href="#how">How It Works</a>
+        <a href="#platform">Platform</a>
+        <a href="#login">Client Login</a>
+      </nav>
     </div>
-    <nav class="nav">
-      <a href="#pricing">Pricing</a>
-      <a href="#forms">Forms</a>
-      <a href="#booking">Book</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<section class="hero">
-  <div class="container">
-    <h1>Fix errors. Build credit. Get results—professionally.</h1>
-    <p>We help identify and dispute inaccuracies under the FCRA, organize goodwill and validation letters, and guide your next steps.
-       Clear pricing, printable forms, and fast contact—everything you need to start today.</p>
-    <div class="cta">
-      <a class="btn btn-primary" href="#pricing">See Pricing</a>
-      <a class="btn btn-outline" href="#forms">Download Forms</a>
-    </div>
-  </div>
-</section>
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="hero-container">
 
-<section class="section" id="pricing">
-  <div class="container">
-    <h2>Pricing</h2>
-    <p class="lead">Transparent. No score guarantees—just diligent, compliant work.</p>
+      <div class="hero-content">
+        <span class="hero-eyebrow">AI-POWERED CREDIT PLATFORM</span>
 
-    <div class="pricing">
-      <div class="card">
-        <h3>Credit Audit & Plan</h3>
-        <div class="price">$150</div>
-        <div class="small">One-time onboarding session</div>
-        <ul class="list">
-          <li>Review all three bureaus together</li>
-          <li>Prioritize disputes with a monthly plan</li>
-          <li>Setup and document strategy</li>
+        <h1>
+          Credit Repair,<br>
+          Rebuilt for the Modern World
+        </h1>
+
+        <p class="hero-subtext">
+          Stayton Credit Repair delivers compliant dispute strategies,
+          secure client dashboards, and AI-assisted credit intelligence —
+          designed to help you regain financial control with confidence.
+        </p>
+
+        <ul class="hero-trust">
+          <li>✔ FCRA-Compliant Dispute Process</li>
+          <li>✔ Secure Client Portal & Document Vault</li>
+          <li>✔ AI-Guided Credit Strategy</li>
         </ul>
-      </div>
-      <div class="card">
-        <h3>Monthly Service</h3>
-        <div class="price">$99</div>
-        <div class="small">Billed monthly; cancel anytime</div>
-        <ul class="list">
-          <li>First <b>10 inquiries free</b>; then $10 per additional inquiry</li>
-          <li>30–45 days: simple ID/address/name fixes</li>
-          <li>1–3 months: not-yours accounts</li>
-          <li>6–8 months: late pays/identity issues</li>
-          <li>~12 months: major items (repo/bankruptcy)</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Pick a Focus</h3>
-        <label for="focus">Choose what you need:</label>
-        <select id="focus" class="input">
-          <option value="inquiries">Inquiries</option>
-          <option value="personal-info">Personal info corrections</option>
-          <option value="not-yours">Not-yours account</option>
-          <option value="late-pay">Late payment goodwill</option>
-          <option value="validation">Debt validation</option>
-        </select>
-        <p class="small">You can change this focus anytime.</p>
-      </div>
-    </div>
 
-    <div class="notice" style="margin-top:16px">
-      <b>Disclaimer:</b> We do not guarantee any score change or specific outcome. Timeframes are typical estimates only.
-    </div>
-  </div>
-</section>
+        <div class="hero-actions">
+          <a href="#snapshot" class="btn-primary">Get Your Credit Snapshot →</a>
+          <a href="#how" class="btn-secondary">How It Works</a>
+        </div>
+      </div>
 
-<section class="section" id="forms">
-  <div class="container">
-    <h2>Printable Forms</h2>
-    <p class="lead">Open these, review, and print. Each page is formatted for clean printing.</p>
+      <div class="hero-visual">
+        <div class="glass-card">
+          <h3>Credit Snapshot</h3>
+          <p>Real-time credit health overview</p>
 
-    <div class="cards">
-      <div class="card">
-        <h3>Client Intake</h3>
-        <span class="badge">Printable</span><br/>
-        <a href="forms/client-intake.html" class="btn btn-outline" target="_blank" rel="noopener">Open</a>
-        <button class="btn btn-primary" data-print>Print This Page</button>
-      </div>
-      <div class="card">
-        <h3>Service Agreement</h3>
-        <span class="badge">Printable</span><br/>
-        <a href="forms/service-agreement.html" class="btn btn-outline" target="_blank" rel="noopener">Open</a>
-        <button class="btn btn-primary" data-print>Print This Page</button>
-      </div>
-      <div class="card">
-        <h3>Payment Authorization</h3>
-        <span class="badge">Printable</span><br/>
-        <a href="forms/payment-authorization.html" class="btn btn-outline" target="_blank" rel="noopener">Open</a>
-        <button class="btn btn-primary" data-print>Print This Page</button>
-      </div>
-      <div class="card">
-        <h3>Privacy & Disclaimer</h3>
-        <span class="badge">Printable</span><br/>
-        <a href="forms/privacy-disclaimer.html" class="btn btn-outline" target="_blank" rel="noopener">Open</a>
-        <button class="btn btn-primary" data-print>Print This Page</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="booking">
-  <div class="container grid-two">
-    <div>
-      <h2>Book an Appointment</h2>
-      <p class="lead">Choose a time and tell us what you want to focus on. We'll confirm fast.</p>
-      <form id="booking-form">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div>
-            <label>Name</label>
-            <input class="input" name="name" required />
+          <div class="score-row">
+            <div class="score">
+              <span>Experian</span>
+              <strong>—</strong>
+            </div>
+            <div class="score">
+              <span>Equifax</span>
+              <strong>—</strong>
+            </div>
+            <div class="score">
+              <span>TransUnion</span>
+              <strong>—</strong>
+            </div>
           </div>
-          <div>
-            <label>Phone</label>
-            <input class="input" name="phone" required />
-          </div>
-          <div>
-            <label>Email</label>
-            <input class="input" name="email" type="email" required />
-          </div>
-          <div>
-            <label>Preferred Date</label>
-            <input class="input" name="date" type="date" required />
+
+          <div class="status-pill">
+            Secure • Private • Encrypted
           </div>
         </div>
-        <div style="margin-top:12px">
-          <label>What are your main issues?</label>
-          <textarea class="input" name="notes" rows="4" placeholder="Tell us what's wrong on your reports..."></textarea>
-        </div>
-        <div style="margin-top:12px">
-          <button class="btn btn-primary" type="submit">Save Appointment</button>
-          <span id="booking-status" class="small" style="margin-left:10px"></span>
-        </div>
-      </form>
-    </div>
-    <div>
-      <div class="card">
-        <h3>What to bring</h3>
-        <ul class="list">
-          <li>Government ID (driver license)</li>
-          <li>Recent 3-bureau reports (PDF if possible)</li>
-          <li>Any debt letters you've received</li>
-        </ul>
       </div>
-      <div class="card">
-        <h3>Typical timelines</h3>
-        <ul class="list">
-          <li>30–45 days: basic info fixes & inquiries</li>
-          <li>1–3 months: not-yours accounts</li>
-          <li>6–8 months: late payments & identity issues</li>
-          <li>~12 months: major items (repo/bankruptcy)</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="section" id="contact">
-  <div class="container">
-    <h2>Contact</h2>
-    <p class="lead">Have questions? Send a message and we’ll reply quickly.</p>
-    <form id="contact-form">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-        <div>
-          <label>Full Name</label>
-          <input class="input" name="name" required/>
-        </div>
-        <div>
-          <label>Email</label>
-          <input class="input" type="email" name="email" required/>
-        </div>
-        <div>
-          <label>Phone</label>
-          <input class="input" name="phone"/>
-        </div>
-        <div>
-          <label>Topic</label>
-          <select class="input" name="topic">
-            <option>General Question</option>
-            <option>Start Service</option>
-            <option>Billing</option>
-          </select>
-        </div>
-      </div>
-      <div style="margin-top:12px">
-        <label>Message</label>
-        <textarea class="input" rows="5" name="message" placeholder="Tell us what's going on with your reports..."></textarea>
-      </div>
-      <div style="margin-top:12px">
-        <button class="btn btn-primary" type="submit">Send</button>
-        <span id="contact-status" class="small" style="margin-left:10px"></span>
-      </div>
-    </form>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div style="display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center">
-      <div>© <span id="y"></span> Stayton Credit Repair</div>
-      <div><a href="#privacy">Privacy</a> • <a href="#forms">Forms</a></div>
     </div>
-    <div class="print-only" style="margin-top:10px">Printed from staytoncreditrepair.local</div>
-  </div>
-</footer>
+  </section>
 
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-<script src="script.js"></script>
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    © <span id="year"></span> Stayton Credit Repair. All rights reserved.  
+    <br>
+    This platform provides credit education and dispute assistance only.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
+
